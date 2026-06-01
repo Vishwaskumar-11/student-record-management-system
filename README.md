@@ -1,2 +1,30 @@
-# student-record-management-system
-A console-based application developed in C for managing student records with features such as add, update, search, and delete operations.
+# Student Record Mangement sysytem
+
+A console-base application developed in C for managing student records efficiently.
+
+## Features
+
+- Add new student records
+- Upadte exiting records
+- Search student records
+- Delete student records
+- display all student information
+
+## Technologies Used 
+
+- C Programming language
+- File Handling
+- Function
+- Structured Programming
+
+## Learning Outcomes
+
+- Data Management using files
+- Modular programming
+- Problem- solving and logical thinking
+- Console- based application development
+
+## Author
+
+
+Vishwas kuamar
