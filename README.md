@@ -1,4 +1,4 @@
-# Student Record Mangement sysytem
+# student_record_management.c
 
 A console-base application developed in C for managing student records efficiently.
 
