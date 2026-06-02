@@ -14,8 +14,10 @@ void addStudent() {
     printf("Enter Roll Number: ");
     scanf("%d", &s.rollNo);
 
+    getchar(); // buffer clear
+
     printf("Enter Name: ");
-    scanf("%s", s.name);
+    scanf(" %[^\n]", s.name);  
 
     printf("Enter Marks: ");
     scanf("%f", &s.marks);
