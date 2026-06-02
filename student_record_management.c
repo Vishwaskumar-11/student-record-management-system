@@ -72,6 +72,83 @@ void searchStudent() {
     fclose(fp);
 }
 
+void deleteStudent()
+{
+    int roll, found = 0;
+    struct Student s;
+
+    FILE *fp = fopen("students.txt", "r");
+    FILE *temp = fopen("temp.txt", "w");
+
+    printf("Enter Roll Number to Delete: ");
+    scanf("%d", &roll);
+
+    while (fscanf(fp, "%d %s %f",
+           &s.rollNo, s.name, &s.marks) != EOF)
+    {
+        if (s.rollNo != roll)
+        {
+            fprintf(temp, "%d %s %.2f\n",
+                    s.rollNo, s.name, s.marks);
+        }
+        else
+        {
+            found = 1;
+        }
+    }
+
+    fclose(fp);
+    fclose(temp);
+
+    remove("students.txt");
+    rename("temp.txt", "students.txt");
+
+    if(found)
+        printf("\nRecord Deleted Successfully!\n");
+    else
+        printf("\nRecord Not Found!\n");
+}
+
+void updateStudent()
+{
+    int roll, found = 0;
+    struct Student s;
+
+    FILE *fp = fopen("students.txt", "r");
+    FILE *temp = fopen("temp.txt", "w");
+
+    printf("Enter Roll Number to Update: ");
+    scanf("%d", &roll);
+
+    while (fscanf(fp, "%d %s %f",
+           &s.rollNo, s.name, &s.marks) != EOF)
+    {
+        if (s.rollNo == roll)
+        {
+            printf("Enter New Name: ");
+            scanf("%s", s.name);
+
+            printf("Enter New Marks: ");
+            scanf("%f", &s.marks);
+
+            found = 1;
+        }
+
+        fprintf(temp, "%d %s %.2f\n",
+                s.rollNo, s.name, s.marks);
+    }
+
+    fclose(fp);
+    fclose(temp);
+
+    remove("students.txt");
+    rename("temp.txt", "students.txt");
+
+    if(found)
+        printf("\nRecord Updated Successfully!\n");
+    else
+        printf("\nRecord Not Found!\n");
+}
 int main() {
     int choice;
 
@@ -80,7 +157,9 @@ int main() {
         printf("1. Add Student\n");
         printf("2. Display Students\n");
         printf("3. Search Student\n");
-        printf("4. Exit\n");
+        printf("4. Delete Student\n");
+        printf("5. Update student\n");
+        printf("6. Exit\n");
 
         printf("Enter Choice: ");
         scanf("%d", &choice);
@@ -99,7 +178,15 @@ int main() {
                 break;
 
             case 4:
-                printf("Thank You!\n");
+                deleteStudent();
+                break;
+
+            case 5:
+                updateStudent();
+                break;
+
+            case 6:
+                printf("Thank you!\n");
                 exit(0);
 
             default:
