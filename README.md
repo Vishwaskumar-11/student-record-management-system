@@ -1,30 +1,90 @@
-# student_record_management.c
+# Student Record Management System
 
-A console-base application developed in C for managing student records efficiently.
+A simple **Student Record Management System** developed in **C Language** using **Structures** and **File Handling**. This project allows users to manage student records through a menu-driven interface.
 
 ## Features
 
-- Add new student records
-- Upadte exiting records
-- Search student records
-- Delete student records
-- display all student information
+* Add New Student Record
+* Display All Student Records
+* Search Student by Roll Number
+* Update Student Information
+* Delete Student Record
+* Store Data Permanently Using File Handling
 
-## Technologies Used 
+## Technologies Used
 
-- C Programming language
-- File Handling
-- Function
-- Structured Programming
+* C Programming Language
+* Structures
+* File Handling
+* Functions
 
-## Learning Outcomes
+## Project Structure
 
-- Data Management using files
-- Modular programming
-- Problem- solving and logical thinking
-- Console- based application development
+```
+Student-Record-System/
+│
+├── main.c
+├── students.txt
+└── README.md
+```
+
+## How It Works
+
+The program stores student information including:
+
+* Roll Number
+* Name
+* Marks
+
+All records are saved in `students.txt` and can be accessed, modified, searched, or deleted through the menu options.
+
+## Menu Options
+
+1. Add Student
+2. Display Students
+3. Search Student
+4. Delete Student
+5. Update Student
+6. Exit
+
+## Compilation and Execution
+
+Compile the program:
+
+```bash
+gcc main.c -o student
+```
+
+Run the program:
+
+```bash
+./student
+```
+
+For Windows:
+
+```bash
+student.exe
+```
+
+## Learning Concepts
+
+This project demonstrates:
+
+* Structures in C
+* User Defined Functions
+* File Handling (`fopen`, `fclose`, `fprintf`, `fscanf`)
+* Data Management
+* Menu Driven Programming
+
+## Future Enhancements
+
+* Grade Calculation
+* Sorting Student Records
+* Percentage Calculation
+* Binary File Storage
+* Password Protection
 
 ## Author
 
-
-Vishwas kuamar
+Developed as a learning project to practice C Programming and File Handling concepts.
